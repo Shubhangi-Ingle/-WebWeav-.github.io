@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apna College</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: rgb(103, 89, 75);
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 2px 5px rgba(6, 211, 222, 0.1);
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    header nav ul li {
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: #ffc107;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      display: none;
+      background-color: #dbd9d9;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #home-section {
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Apna College</h1>
+    
+    <nav>
+      <ul>
+        <li><a href="#" id="home">Home</a></li>
+        <li><a href="#" id="courses">Courses</a></li>
+        <li><a href="#" id="about">About Us</a></li>
+        <li><a href="#" id="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home-section">
+      <h2>Home Page</h2>
+      <p>Welcome to Apna College!</p>
+      <p>Explore endless opportunities for learning and research.</p>
+      
+    </section>
+    <section id="courses-section">
+      <h2>Courses Offered</h2>
+      <ul id="courses-list">
+        <!-- JavaScript will populate this list -->
+      </ul>
+    </section>
+    <section id="about-section">
+      <h2>About Us</h2>
+      <p>Learn about our institute and our mission.</p>
+      <p>
+        The objective of the Apna College - Digital Empowerment
+        to the Students in keeping view of Digital India. ISMS provides all services of
+        the Institutions Online to the Students. Advantage of ISMS to easily track records
+        like Students Database Management, Scholar Register Management, Enrollment and Examination
+        Process System, Account Management, Fee Collection Management on any time from any
+        where.
+      </p>
+      <p>
+        MPOnline’s objective to provide real-time ONLINE SYSTEM to the institutions. Therefore,
+        on ONE CLICK all the status of the Students and various types reports will be available
+        as required. On the other hand, students of the institutes can submit/pay their dues
+        from anywhere and save most of their time and money to stand in queue on counter
+        windows and from large distance traveling.
+      </p>
+    </section>
+    <section id="contact-section">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for inquiries and support.</p>
+      <p>If you have any questions or inquiries, feel free to contact us using the details below.</p>
+      <ul>
+        <li><strong>Email:</strong> info@example.com</li>
+        <li><strong>Phone:</strong> +918600432696</li>
+        <li><strong>Address:</strong> 123 Main Street, Mumbai, India</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const homeLink = document.getElementById("home");
+      const coursesLink = document.getElementById("courses");
+      const aboutLink = document.getElementById("about");
+      const contactLink = document.getElementById("contact");
+      
+      const homeSection = document.getElementById("home-section");
+      const coursesSection = document.getElementById("courses-section");
+      const aboutSection = document.getElementById("about-section");
+      const contactSection = document.getElementById("contact-section");
+
+      const coursesList = document.getElementById("courses-list");
+      
+      homeLink.addEventListener("click", function() {
+        showSection(homeSection);
+      });
+      
+      coursesLink.addEventListener("click", function() {
+        showSection(coursesSection);
+        populateCourses();
+      });
+      
+      aboutLink.addEventListener("click", function() {
+        showSection(aboutSection);
+      });
+      
+      contactLink.addEventListener("click", function() {
+        showSection(contactSection);
+      });
+
+      function showSection(section) {
+        const sections = document.querySelectorAll("main section");
+        sections.forEach(sec => sec.style.display = "none");
+        section.style.display = "block";
+      }
+
+      function populateCourses() {
+        // Example courses data
+        const courses = ["Web Development", "Data Science", "Digital Marketing"];
+        coursesList.innerHTML = "";
+        courses.forEach(course => {
+          const li = document.createElement("li");
+          li.textContent = course;
+          coursesList.appendChild(li);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
